@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.allianz.rws</groupId>
+	<artifactId>joridmicro</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>joridmicro</name>
+	<description>Base REST Service</description>
+	<organization>
+		<name>AMOS Iberolatam</name>
+	</organization>
+	<parent>
+		<artifactId>rws-jbossmicros-parent</artifactId>
+		<groupId>com.allianz.parents</groupId>
+		<version>3.1.0-RELEASE</version>
+	</parent>
+
+	<properties>
+        <sonar.projectName>joridmicro</sonar.projectName>
+		<sonar.projectKey>joridmicro</sonar.projectKey>
+	</properties>
+
+	<build>
+
+		<finalName>${project.artifactId}</finalName>
+
+		<resources>
+			<resource>
+				<directory>${basedir}/src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.yml</include>
+					<include>**/*.xml</include>
+					<include>**/*.sql</include>
+					<include>META-INF/spring.factories</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+                <filtering>false</filtering>
+				<includes>
+					<include>*.key</include>
+				</includes>
+			</resource>
+		</resources>
+
+
+	</build>
+	
+  <modules>
+    <module>joridmicro-api</module>
+    <module>joridmicro-client</module>
+    <module>joridmicro-web</module>
+  </modules>
+</project>

@@ -1,0 +1,2 @@
+# Bootstrap components
+org.springframework.cloud.bootstrap.BootstrapConfiguration=com.allianz.rws.joridmicro.configuration.SourceLocatorConfig

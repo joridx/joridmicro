@@ -1,0 +1,64 @@
+
+#Always save using the UTF-8 encoding to minimize the possibility of errors.
+#Never, EVER use the TAB character anywhere in it.
+#All lines must have same number of spaces
+
+# To customize this file referer to the spring boot documentation
+# http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/
+
+# Actuator public information
+#Don't touch @project.version@ --> This variable is going to be replaced by maven and publish.
+#All info added to info is going to be published and visible without security under /secure/info
+info.app:
+  title: Allianz REST joridmicro application
+  artifact: @project.artifactId@
+  group: @project.groupId@
+  version: @project.version@
+  encoding: @project.build.sourceEncoding@
+  java.version: @java.version@
+
+# Swagger configuration
+springfox.documentation.swagger.v2.path: /api-docs
+
+# Embeded server configuration
+server:
+  contextPath: /joridmicro
+  servlet-path: /*
+  port: 8080
+clientApp.resourceId: APP_INTRANET
+
+# Disable security
+security.basic.enabled: false
+spring.jmx:
+  default-domain: joridmicro
+  enabled :  false
+spring.main.banner-mode: log  
+
+# Actuator endpoints configuration
+# http://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html
+endpoints:
+  jmx.domain: joridmicro
+  actuator.path: /secure/actuator
+  env.path: /secure/env
+  health.path: /secure/health
+  info.path: /secure/info
+  trace.path: /secure/trace
+  mappings.path: /secure/mappings
+  metrics.path: /secure/metrics
+  configprops.path: /secure/configprops
+  beans.path: /secure/beans
+  dump.path: /secure/dump
+
+
+
+# INFO CONTRIBUTORS (InfoContributorProperties)
+# Enable build info.
+management.info:
+  build.enabled: true
+  defaults.enabled: true
+  env.enabled: true
+  git.enabled: true
+  git.mode: simple
+  
+  
+

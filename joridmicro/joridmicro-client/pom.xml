@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>joridmicro-client</artifactId>
+	<packaging>jar</packaging>
+
+	<parent>
+	    <artifactId>joridmicro</artifactId>
+	    <groupId>com.allianz.rws</groupId>
+    	<version>0.0.1-SNAPSHOT</version>	    
+	</parent>
+	
+	<properties>
+		<sonar.projectName>joridmicro-client</sonar.projectName>
+		<sonar.projectKey>joridmicro-client</sonar.projectKey>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.allianz.rws</groupId>
+			<artifactId>joridmicro-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.allianz.starters</groupId>
+			<artifactId>rws-restclient-starter</artifactId>
+		</dependency>
+
+ 		<dependency>
+ 			<groupId>com.allianz.starters</groupId> 
+ 			<artifactId>rws-test-starter</artifactId> 
+ 			<scope>test</scope>
+ 		</dependency>
+	    
+					
+	</dependencies>
+
+	<build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**</include>
+                </includes>
+            </resource>
+        </resources>	
+		<plugins>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>		
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id> <!-- this is used for inheritance merges -->
+						<phase>package</phase> <!-- bind to the packaging phase -->
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

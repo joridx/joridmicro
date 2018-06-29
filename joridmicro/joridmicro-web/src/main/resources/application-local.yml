@@ -1,0 +1,2 @@
+logging.level:
+  com.allianz.rws.joridmicro: DEBUG
